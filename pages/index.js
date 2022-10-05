@@ -7,7 +7,6 @@ export async function getServerSideProps() {
 }
 
 export default function Home({data}) {
-  console.log(data)
   const { getValue, updateValue, value } = useName(data);
   return (
     <div>

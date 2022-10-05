@@ -10,7 +10,6 @@ const useName = (defaultvalue) => {
         try {
             const res = await axios.get(valuePath);
             if (res.status === 200) {
-                console.log(res.data)
                 setValue(res.data);
             }
             

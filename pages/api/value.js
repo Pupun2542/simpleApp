@@ -12,10 +12,8 @@ export default async function handler(req, res) {
       
       const item = await db.get("select * from test where id=1");
       if (item) {
-        // console.log(`UPDATE test SET name = '${req.body.name}' WHERE id = 1`)
         db.exec(`UPDATE test SET name = '${req.body.name}' WHERE id = 1`);
       } else {
-        console.log("insert")
         db.exec(`insert into test (name) values ('${req.body.name}')`);
       }
       return res.status(200).send("insert item sucessful");
